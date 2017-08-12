@@ -39,7 +39,7 @@ void tests_run(uint8_t id)
 	tests_slider_init(tests_host);
 	break;
     case 5:
-	tests_styletest_init(tests_host);
+	//tests_styletest_init(tests_host);
 	break;
     case 6:
 	tests_tabs_init(tests_host);

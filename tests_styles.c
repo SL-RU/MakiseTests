@@ -1,28 +1,22 @@
 #include "tests_styles.h"
 
-MakiseStyle ts_button =
+MakiseStyle_Button ts_button =
 {
-    MC_White,
     &F_Arial24,
-    0,
     //bg       font     border   double_border
-    {MC_Black, MC_Gray, MC_Gray, 0},  //unactive
-    {MC_Black, MC_White, MC_White, 0},//normal
-    {MC_White, MC_Green, MC_White, 0}, //focused
-    {MC_Green, MC_White, MC_White, 0}, //active
-};
-MakiseStyle ts_button_small =
-{
-    MC_White,
-    &F_Arial12,
-    0,
-    //bg       font     border   double_border
-    {MC_Black, MC_Gray, MC_Gray, 0},  //unactive
     {MC_Black, MC_White, MC_White, 0},//normal
     {MC_White, MC_Green, MC_White, 0}, //focused
     {MC_Green, MC_White, MC_White, 0}, //active
 };
 
+MakiseStyle_Button ts_button_small =
+{
+    &F_Arial12,
+     //bg       font     border   double_border
+    {MC_Black, MC_White, MC_White, 0},//normal
+    {MC_White, MC_Green, MC_White, 0}, //focused
+    {MC_Green, MC_White, MC_White, 0}, //active
+};
 
 MakiseStyle ts_slider =
 {
@@ -35,27 +29,17 @@ MakiseStyle ts_slider =
     {MC_Black, MC_White, MC_White, 0}, //focused
     {MC_Green, MC_White, MC_White, 0}, //active
 };
-MakiseStyle ts_lable =
+MakiseStyle_Lable ts_lable =
 {
-    MC_White,
     &F_Arial24,
-    0,
-    //bg       font     border   double_border
-    {0, 0, 0, 0},  //unactive
-    {MC_Black, MC_White, MC_Black, 0},//normal
-    {0, 0, 0, 0}, //focused
-    {0, 0, 0, 0}, //active
+    //font       bg     border   double_border
+    MC_White, MC_Black, MC_Black, 0
 };
-MakiseStyle ts_lable_small =
+MakiseStyle_Lable ts_lable_small =
 {
-    MC_White,
     &F_Arial16,
-    0,
-    //bg       font     border   double_border
-    {0, 0, 0, 0},  //unactive
-    {MC_Black, MC_White, MC_Black, 0},//normal
-    {0, 0, 0, 0}, //focused
-    {0, 0, 0, 0}, //active
+    //font       bg     border   double_border
+    MC_White, MC_Black, MC_Black, 0
 };
 
 
@@ -71,16 +55,11 @@ MakiseStyle ts_textfield =
     {0, 0, 0, 0}, //active
 };
 
-MakiseStyle ts_canvas =
+MakiseStyle_Canvas ts_canvas =
 {
-    MC_White,
-    &F_Arial16,
-    0,
-    //bg       font     border   double_border
-    {MC_Black, MC_Gray, MC_Gray,    0},  //unactive
-    {MC_Black, MC_Gray, MC_White, 0},  //normal
-    {MC_Black, MC_Gray, MC_White,   0},  //focused
-    {MC_Black, MC_White, MC_White, 0},  //active
+    //bg       border   double_border
+    {MC_Black, MC_White, 0},  //normal
+    {MC_Black, MC_White, 0},  //focused
 };
 
 MakiseStyle ts_tabs =
@@ -95,46 +74,38 @@ MakiseStyle ts_tabs =
     {MC_Black, MC_Green, MC_White, 0},  //active
 };
 
-MakiseStyle ts_slist_item =
+MakiseStyle_SList ts_slist_item =
 {
-    MC_White,
     &F_Arial16,
     0,
     //bg       font     border   double_border
-    {MC_Black, MC_Gray, MC_Gray,    0},  //unactive
     {MC_Black, MC_Gray, MC_White, 0},  //normal
     {MC_White, MC_Green, MC_White,   0},  //focused
     {MC_Black, MC_White, MC_White, 0},  //active
 };
-MakiseStyle ts_slist =
+MakiseStyle_SList ts_slist =
 {
-    MC_White,
     &F_Arial16,
     0,
     //bg       font     border   double_border
-    {MC_Black, MC_Gray, MC_Gray,    0},  //unactive
     {MC_Black, MC_Gray, MC_Gray, 0},  //normal
     {MC_Black, MC_White, MC_White,   0},  //focused
     {MC_Black, MC_White, MC_White, 0},  //active
 };
-MakiseStyle ts_slist_small =
+MakiseStyle_SList ts_slist_small =
 {
-    MC_White,
     &F_Arial12,
     0,
     //bg       font     border   double_border
-    {MC_Black, MC_Gray, MC_Gray,    0},  //unactive
     {MC_Black, MC_Gray, MC_Gray, 0},  //normal
     {MC_Black, MC_White, MC_White,   0},  //focused
     {MC_Black, MC_White, MC_White, 0},  //active
 };
-MakiseStyle ts_slist_item_big =
+MakiseStyle_SList ts_slist_item_big =
 {
-    MC_White,
     &F_Arial24,
     0,
     //bg       font     border   double_border
-    {MC_Transparent, MC_Gray, MC_Gray,    0},  //unactive
     {MC_Transparent, MC_White, MC_White, 0},  //normal
     {MC_White, MC_Green, MC_White,   0},  //focused
     {MC_Transparent, MC_White, MC_White, 0},  //active
