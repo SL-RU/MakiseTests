@@ -1,14 +1,15 @@
 #include "tests.h"
 
 MSList_Item tests_items[tests_items_len] = {
-    {"hello world", 0},
+    {"Hello world/Привет мир", 0},
     {"buttons", 1},
     {"positioning", 2},
     {"container", 3},
     {"sliders", 4},
     {"styles", 5},
-    {"tabs"},
-    {"list"},
+    {"tabs", 6},
+    {"list", 7},
+    {"file viewer", 8},
 };
 
 MHost *tests_host;
@@ -46,6 +47,9 @@ void tests_run(uint8_t id)
 	break;
     case 7:
 	tests_slist_init(tests_host);
+	break;	
+    case 8:
+	tests_fsviewer_init(tests_host);
 	break;
 
     default:

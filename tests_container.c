@@ -100,9 +100,9 @@ static void tree(MButton*b)
     //print elements tree in console
     makise_g_print_tree(host);
 }
-static void select(MButton*b)
+static void select_kek(MButton*b)
 {
-    //select button
+    //select_kek button
     if(selected[0] == 0)
     {
 	selected[0] = &b->el;
@@ -157,7 +157,7 @@ void tests_container_init(MHost *h)
 			       100, 30),
 			buttons_text[i],   //text
 			//events:
-			&select, 0, 0,
+			&select_kek, 0, 0,
 			&ts_button); //style
     }
 

@@ -100,5 +100,5 @@ void tests_buttons_init(MHost *h)
     m_create_toggle(toggle, h->host,
 		    mp_rel(10, 120, 220, 30),
 		    tg_text,
-		    0, &ts_button);
+		    0, &ts_textfield);
 }
