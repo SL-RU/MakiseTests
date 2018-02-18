@@ -1,5 +1,25 @@
 #include "tests.h"
 
+MakiseStyle_Button ts_button =
+{
+    .font = &F_Default10x20,
+    .bitmap_gap = 10,
+    //bg       font     border   double_border
+    .normal =  {MC_Black, MC_White, MC_Black, 0}, //normal
+    .focused = {MC_White, MC_Black, MC_White, 0}, //focused
+    .active =  {MC_Black, MC_White, MC_White, 0}, //active
+};
+MakiseStyle_Lable ts_lable =
+{
+    .font = &F_Default8x13,
+    //font       bg     border   double_border
+    .font_col = MC_White,
+    .bg_color = MC_Black,
+    .border_c = MC_Black,
+    .double_border = 0,
+    .scroll_speed = 100
+};
+
 
 static MButton button; //button structure
 static MLable lable; //lable structure
@@ -9,12 +29,10 @@ static MLable lable; //lable structure
 static void  click(MButton* b) //b - button wich was clicked
 {
     //create lable
-    m_create_lable(&lable, //pointer to lable's structure
-		   b->el.parent, //parent container. We'll put lable to the same container, where is our button
-		   mp_rel(100, 150, //position(x,y)
-			  220, 30), //width, height
-		   "Hello world!", //lable's text
-		   &ts_lable); //style
+    m_create_lable(&lable, b->el.parent,
+		   mp_rel(100, 150, 220, 30),
+		   &ts_lable);
+    m_lable_set_text(&lable, "Hello world!");
 
     //remove button from the container
     makise_g_cont_rem(&button.el);
@@ -23,14 +41,9 @@ static void  click(MButton* b) //b - button wich was clicked
 
 void tests_hello_init(MHost *h)
 {
-	m_create_button(&button, //pointer to the structure
-			h->host, //container
-			mp_rel(10 + 100, 53, //position(x,y)
-			       85, 30), //width,height
-			"Click!",   //text
-			//events:
-			&click, //click event
-			0, //event when key pressed on element
-			0, //when focus recieved / loosed
-			&ts_button); //style
+    m_create_button(&button, h->host,
+		    mp_rel(110, 53, 85, 30),
+		    &ts_button);
+    m_button_set_click(&button, &click);
+    m_button_set_text(&button, "Click!");
 }

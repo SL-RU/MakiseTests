@@ -6,7 +6,6 @@
 #include "makise_gui.h"
 #include "makise_e.h"
 
-#include "tests_styles.h"
 
 void tests_init(MHost *h);
 
