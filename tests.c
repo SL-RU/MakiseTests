@@ -56,6 +56,6 @@ void tests_run(uint8_t id)
 
 void tests_exit()
 {
-    makise_g_cont_clear(tests_host->host);
+    mi_cont_clear(&tests_host->host);
     //tests_selector_init(tests_host);
 }

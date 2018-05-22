@@ -41,7 +41,7 @@ static void  click(MButton* b) //b - button wich was clicked
 
 void tests_hello_init(MHost *h)
 {
-    m_create_button(&button, h->host,
+    m_create_button(&button, &h->host,
 		    mp_rel(110, 53, 85, 30),
 		    &ts_button);
     m_button_set_click(&button, &click);
