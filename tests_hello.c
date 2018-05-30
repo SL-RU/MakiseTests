@@ -4,10 +4,10 @@ MakiseStyle_Button ts_button =
 {
     .font = &F_Default10x20,
     .bitmap_gap = 10,
-    //bg       font     border   double_border
-    .normal =  {MC_Black, MC_White, MC_Black, 0}, //normal
+    //          bg       font     border   double_border
+    .normal =  {MC_Black, MC_White, MC_White, 0}, //normal
     .focused = {MC_White, MC_Black, MC_White, 0}, //focused
-    .active =  {MC_Black, MC_White, MC_White, 0}, //active
+    .active =  {MC_Gray, MC_White, MC_White, 0}, //active
 };
 MakiseStyle_Lable ts_lable =
 {
@@ -22,12 +22,14 @@ MakiseStyle_Lable ts_lable =
 
 
 static MButton button; //button structure
+static MButton button1; //button structure
 static MLable lable; //lable structure
 
 
 //event when button was clicked
 static void  click(MButton* b) //b - button wich was clicked
 {
+    return;
     //create lable
     m_create_lable(&lable, b->el.parent,
 		   mp_rel(100, 150, 220, 30),
@@ -46,4 +48,10 @@ void tests_hello_init(MHost *h)
 		    &ts_button);
     m_button_set_click(&button, &click);
     m_button_set_text(&button, "Click!");
+
+    m_create_button(&button1, &h->host,
+		    mp_rel(110, 150, 85, 30),
+		    &ts_button);
+    m_button_set_click(&button1, &click);
+    m_button_set_text(&button1, "Click!");
 }
