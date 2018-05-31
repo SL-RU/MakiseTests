@@ -4,10 +4,11 @@ MakiseStyle_Button ts_button =
 {
     .font = &F_Default10x20,
     .bitmap_gap = 10,
+    .active_delay = 5,
     //          bg       font     border   double_border
-    .normal =  {MC_Black, MC_White, MC_White, 0}, //normal
-    .focused = {MC_White, MC_Black, MC_White, 0}, //focused
-    .active =  {MC_Gray, MC_White, MC_White, 0}, //active
+    .normal =  {MC_Black, MC_White, MC_White, 2}, //normal
+    .focused = {MC_Black, MC_White, MC_White, 6}, //focused
+    .active =  {MC_Green, MC_Gray, MC_White, 2}, //active
 };
 MakiseStyle_Lable ts_lable =
 {
