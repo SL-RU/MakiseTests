@@ -36,7 +36,7 @@ static void  click1(MButton* b) //b - button wich was clicked
     //return;
     //create lable
     m_create_lable(&lable, b->el.parent,
-		   mp_rel(100, 150, 220, 30),
+		   mp_rel(100, 150, 130, 30),
 		   &ts_lable);
     m_lable_set_text(&lable, "Hello world!");
 
