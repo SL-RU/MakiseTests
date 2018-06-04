@@ -12,12 +12,12 @@ MakiseStyle_Button ts_button =
 };
 MakiseStyle_Lable ts_lable =
 {
-    .font = &F_Default8x13,
+    .font = &F_Default10x20,
     //font       bg     border   double_border
     .font_col = MC_White,
-    .bg_color = MC_Black,
-    .border_c = MC_Black,
-    .double_border = 0,
+    .bg_color = MC_Transparent,
+    .border_c = MC_Green,
+    .thickness = 3,
     .scroll_speed = 100
 };
 
@@ -27,10 +27,13 @@ static MButton button1; //button structure
 static MLable lable; //lable structure
 
 
-//event when button was clicked
 static void  click(MButton* b) //b - button wich was clicked
 {
-    return;
+}
+//event when button was clicked
+static void  click1(MButton* b) //b - button wich was clicked
+{
+    //return;
     //create lable
     m_create_lable(&lable, b->el.parent,
 		   mp_rel(100, 150, 220, 30),
@@ -38,7 +41,7 @@ static void  click(MButton* b) //b - button wich was clicked
     m_lable_set_text(&lable, "Hello world!");
 
     //remove button from the container
-    makise_g_cont_rem(&button.el);
+    makise_g_cont_rem(&button1.el);
     
 }
 
@@ -53,6 +56,6 @@ void tests_hello_init(MHost *h)
     m_create_button(&button1, &h->host,
 		    mp_rel(110, 150, 85, 30),
 		    &ts_button);
-    m_button_set_click(&button1, &click);
+    m_button_set_click(&button1, &click1);
     m_button_set_text(&button1, "Click!");
 }
